@@ -1,6 +1,12 @@
 import { Slot } from "expo-router";
-
-// Import your global CSS file
+import { SessionProvider } from "../context";
 import "@/global.css";
 
-export default Slot;
+
+export default function Root() {
+    return (
+      <SessionProvider>
+        <Slot />
+      </SessionProvider>
+    );
+  }
